@@ -17,7 +17,7 @@ Copyright 2020. Huawei Technologies Co., Ltd. All rights reserved.
 package model
 
 import (
-	"pushkit-go-sample/push/constant"
+	"github.com/ssych/hms-push-go/src/push/constant"
 )
 
 type MessageRequest struct {
@@ -87,15 +87,15 @@ type AlertDictionary struct {
 	LaunchImage  string   `json:"launch-image,omitempty"`
 }
 
-//NewTransparentMsgRequest will return a new MessageRequest instance with default value to send transparent message.
-//developers should set at least on of Message.Token or  Message.Topic or Message.Condition
+// NewTransparentMsgRequest will return a new MessageRequest instance with default value to send transparent message.
+// developers should set at least on of Message.Token or  Message.Topic or Message.Condition
 func NewTransparentMsgRequest() *MessageRequest {
 	msgRequest := getDefaultMsgRequest()
 	return msgRequest
 }
 
 // NewNotificationMsgRequest will return a new MessageRequest instance with default value to send notification message.
-//developers should set at least on of Message.Token or  Message.Topic or Message.Condition
+// developers should set at least on of Message.Token or  Message.Topic or Message.Condition
 func NewNotificationMsgRequest() *MessageRequest {
 	msgRequest := getDefaultMsgRequest()
 	msgRequest.Message.Notification = getDefaultNotification()
@@ -124,9 +124,9 @@ func getDefaultApnsPayload() map[string]interface{} {
 	payLoad := make(map[string]interface{}, 0)
 	aps := &Aps{
 		Alert: &AlertDictionary{
-			Title: "title",
-			Body:  "apns body",
-			TitleLocKey : "PLAY",
+			Title:       "title",
+			Body:        "apns body",
+			TitleLocKey: "PLAY",
 		},
 		Badge: 5,
 	}

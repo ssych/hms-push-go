@@ -20,7 +20,7 @@ import (
 	"errors"
 	"regexp"
 
-	"pushkit-go-sample/push/model"
+	"github.com/ssych/hms-push-go/src/push/model"
 )
 
 var (

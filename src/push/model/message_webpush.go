@@ -17,8 +17,9 @@ Copyright 2020. Huawei Technologies Co., Ltd. All rights reserved.
 package model
 
 import (
-	"pushkit-go-sample/push/constant"
 	"time"
+
+	"github.com/ssych/hms-push-go/src/push/constant"
 )
 
 type WebPushConfig struct {

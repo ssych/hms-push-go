@@ -19,8 +19,8 @@ package verify
 import (
 	"errors"
 
-	"pushkit-go-sample/push/constant"
-	"pushkit-go-sample/push/model"
+	"github.com/ssych/hms-push-go/src/push/constant"
+	"github.com/ssych/hms-push-go/src/push/model"
 )
 
 func validateAndroidConfig(androidConfig *model.AndroidConfig) error {
@@ -108,7 +108,7 @@ func validateAndroidNotifyPriority(notification *model.AndroidNotification) erro
 	if notification.Importance != "" &&
 		notification.Importance != constant.NotificationPriorityHigh &&
 		notification.Importance != constant.NotificationPriorityDefault &&
-		notification.Importance != constant.NotificationPriorityLow  {
+		notification.Importance != constant.NotificationPriorityLow {
 		return errors.New("Importance must be 'HIGH', 'NORMAL' or 'LOW'")
 	}
 	return nil
@@ -177,9 +177,9 @@ func validateClickAction(clickAction *model.ClickAction) error {
 		}
 	case constant.TypeApp:
 	case constant.TypeRichResource:
-		if clickAction.RichResource == "" {
-			return errors.New("rich_resource must not be empty when type is 4")
-		}
+		// if clickAction.RichResource == "" {
+		// 	return errors.New("rich_resource must not be empty when type is 4")
+		// }
 	default:
 		return errors.New("type must be in the interval [1 - 4]")
 	}
